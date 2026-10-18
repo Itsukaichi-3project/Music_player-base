@@ -50,10 +50,9 @@ const bars = document.querySelectorAll('.wave-bar');
 
 bars.forEach((bar, index) => {
   // 順番に綺麗にずらす場合
-  const delay = (index + 1) * 0.15;
   
   // またはランダムにしたい場合はこちら：
-  // const delay = Math.random() * 0.6;
+  const delay = Math.random() * 0.6;
 
   bar.style.animationDelay = `${delay}s`;
 });
