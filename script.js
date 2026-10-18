@@ -21,3 +21,8 @@ playButton.addEventListener('click', () => {
         stop_Music();
     }
 });
+window.addEventListener("DOMContentLoaded", () => {
+    if (musicPath) {
+        window.document.title = musicPath;
+    }
+});
