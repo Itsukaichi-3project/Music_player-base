@@ -4,21 +4,25 @@ let isPlaying = false;
 let isStarted = false;
 const urlParams = new URLSearchParams(window.location.search);
 const musicPath = urlParams.get('path');
+const waveContainer =  document.getElementById('waveContainer');
 function run_Music(path){
     audio = new Audio(path);
     audio.play();
     playButton.textContent = '■音声を停止';
+    waveContainer.classList.remove('hidden');
     isPlaying = true;
     audio.addEventListener('ended', () => {
         isPlaying = false;
         isStarted = false;
         playButton.textContent = '▶音声を再生';
+        waveContainer.classList.add('hidden');
     });
 }
 function stop_Music(){
     audio.pause();
     playButton.textContent = '▶音声を再生';
     isPlaying = false;
+    waveContainer.classList.add('hidden');
 }
 playButton.addEventListener('click', () => {
     if (!isPlaying) {
@@ -29,6 +33,7 @@ playButton.addEventListener('click', () => {
             audio.play();
             playButton.textContent = '■音声を停止';
             isPlaying = true;
+            waveContainer.classList.remove('hidden');
         }
     } else {
         stop_Music();
