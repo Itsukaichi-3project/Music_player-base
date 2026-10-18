@@ -39,3 +39,4 @@ window.addEventListener("DOMContentLoaded", () => {
         window.document.title = musicPath;
     }
 });
+window.document.title = musicPath;
