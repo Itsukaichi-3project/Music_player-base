@@ -1,0 +1,28 @@
+#main-content{
+    background-color: #000000;
+}
+#play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 20px 40px;
+    font-size: 24px;
+    color: #fff;
+    background: linear-gradient(to top right, #6366f1,#a855f7);
+    box-shadow: 0 25px 50px -12px rgba(99, 102, 241, 0.4);;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 128px;
+    width: calc(128px * 6);
+    transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+}
+#play-button:hover {
+    scale: 1.05;
+
+}
+#play-button:active {
+    scale:0.95;
+}
