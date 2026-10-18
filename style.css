@@ -31,6 +31,9 @@
 #play-button:active {
     scale:0.95;
 }
+.wave-container {
+  display: flex;
+}
 .wave-bar {
   width: 6px;
   height: 10px;
