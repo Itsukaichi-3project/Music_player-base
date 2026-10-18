@@ -56,3 +56,22 @@ bars.forEach((bar, index) => {
 
   bar.style.animationDelay = `${delay}s`;
 });
+const total = bars.length;
+
+// 中央のインデックス（例: 7個なら 3）
+const centerIndex = (total - 1) / 2;
+
+bars.forEach((bar, index) => {
+// 中央からの距離（0, 1, 2...）
+const distanceFromCenter = Math.abs(index - centerIndex);
+
+// 中央が一番高く（例: 350px）、外側に行くほど低くする（最小でも 120px は残す）
+const maxHeight = Math.max(120, 350 - (distanceFromCenter * 50));
+
+// 遅延時間も中央から外側に向けて順番にずらす
+const delay = distanceFromCenter * 0.1;
+
+// CSSカスタム変数として要素に直接セット
+bar.style.setProperty('--peak-height', `${maxHeight}px`);
+bar.style.animationDelay = `${delay}s`;
+});
