@@ -9,6 +9,11 @@ function run_Music(path){
     audio.play();
     playButton.textContent = '■音声を停止';
     isPlaying = true;
+    audio.addEventListener('ended', () => {
+        isPlaying = false;
+        isStarted = false;
+        playButton.textContent = '▶音声を再生';
+    });
 }
 function stop_Music(){
     audio.pause();
