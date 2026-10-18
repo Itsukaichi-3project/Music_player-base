@@ -36,6 +36,7 @@
 .wave-container {
   display: flex;
   justify-content: center;
+  align-items: center;
   position: absolute;  /* ★Flexboxの配置計算から完全に外す */
   top: 50%;
   left: 50%;
