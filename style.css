@@ -1,10 +1,11 @@
 #main-content{
-    background-color: #000000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100vw;
+  background-color: #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
 }
 #play-button {
   display: flex;
@@ -33,10 +34,15 @@
 }
 .wave-container {
   display: flex;
+  position: absolute;  /* ★Flexboxの配置計算から完全に外す */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* ★自身の中心を基準点に合わせる */
+  z-index: -1;
 }
 .wave-bar {
-  width: 6px;
-  height: 10px;
+  width: 60px;
+  height: 100px;
   background-color: #6366f1; /* インディゴカラー（お好みで変更可） */
   border-radius: 9999px;
   animation: music-wave 1.2s ease-in-out infinite alternate;
