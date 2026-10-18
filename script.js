@@ -1,6 +1,7 @@
 let audio = null;
 const playButton = document.getElementById('play-button');
 let isPlaying = false;
+let isStarted = false;
 const urlParams = new URLSearchParams(window.location.search);
 const musicPath = urlParams.get('path');
 function run_Music(path){
@@ -16,7 +17,14 @@ function stop_Music(){
 }
 playButton.addEventListener('click', () => {
     if (!isPlaying) {
-        run_Music(`https://raw.githubusercontent.com/Itsukaichi-3project/Music_player-base/main/musics/${musicPath}`);
+        if (!isStarted) {
+            isStarted = true;
+            run_Music(`https://raw.githubusercontent.com/Itsukaichi-3project/Music_player-base/main/musics/${musicPath}`);
+        } else {
+            audio.play();
+            playButton.textContent = '■音声を停止';
+            isPlaying = true;
+        }
     } else {
         stop_Music();
     }
